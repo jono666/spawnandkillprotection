@@ -413,8 +413,7 @@ public Event_PlayerDeath(Handle:event, const String:name[], bool:broadcast)
 	}
 }
 
-public Action:Hook_OnTakeDamage(victim, &attacker, &inflictor, &Float:damage, &damagetype, &weapon,
-								Float:damageForce[3], Float:damagePosition[3], damagecustom)
+public Action:Hook_OnTakeDamage(victim, &attacker, &inflictor, &Float:damage, &damagetype, &weapon, Float:damageForce[3], Float:damagePosition[3])
 {	
 	if (isKillProtected[victim]) {
 
