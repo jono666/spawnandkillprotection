@@ -423,7 +423,10 @@ public Action:Hook_OnTakeDamage(victim, &attacker, &inflictor, &Float:damage, &d
 		damage = 0.0;
 		return Plugin_Changed;
 	}
-
+	
+	if (attacker <= 0 || attacker > MaxClients)
+	return Plugin_Continue;
+	
 	if(GetConVarBool(disableweapondamage) == true && isKillProtected[attacker]){
 //		ProtectedPlayerHurted(attacker, inflictor, RoundToFloor(damage));
 		damage = 0.0;
