@@ -401,7 +401,9 @@ public Event_PlayerSpawn(Handle:event, const String:name[], bool:broadcast)
 public Event_PlayerDeath(Handle:event, const String:name[], bool:broadcast)
 {
 	new client = GetClientOfUserId(GetEventInt(event, "userid"));
-
+	if(!client)
+		return;
+		
 	if (IsFakeClient(client)) {
 		return;
 	}
